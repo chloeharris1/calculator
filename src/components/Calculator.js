@@ -9,9 +9,9 @@ class Calculator extends React.Component {
     render(){
         return (
             <div className="calculator">
-                <Formula />
+                {/* <Formula />
                 <Output />
-                <Buttons />
+                <Buttons /> */}
             </div>
         );
     }
