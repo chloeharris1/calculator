@@ -1,0 +1,102 @@
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap');
+$button: #101820;
+$main-font: 'Space Mono',
+monospace;
+.App {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: #F7F6EE;
+    cursor: default;
+}
+
+.calculator {
+    width: 20rem;
+    position: relative;
+    padding: 5px;
+    background: #101820;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    /* Gradient Border */
+    $border: 4px;
+    color: #FFF;
+    background-clip: padding-box;
+    border: solid $border transparent;
+    border-radius: 1em;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -$border;
+        border-radius: inherit;
+        background: linear-gradient(to right, #000, #434343);
+    }
+}
+
+.outputDisplay {
+    font-size: 29px;
+    font-family: $main-font;
+    line-height: 40px;
+    text-align: right;
+    vertical-align: text-top;
+}
+
+.formulaDisplay {
+    min-height: 40px;
+    font-size: 20px;
+    text-align: right;
+    vertical-align: text-top;
+    line-height: 30px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-family: $main-font;
+    color: #CFC81C;
+    font-style: italic;
+}
+
+button {
+    position: relative;
+    height: 70px;
+    width: 80px;
+    color: white;
+    background: $button;
+    border: none;
+    outline: 1px solid #000;
+    font-family: $main-font;
+    font-size: 18px;
+    &:hover {
+        color: #CFC81C;
+        outline: 0.05em solid grey;
+        z-index: 3;
+    }
+}
+
+#clear {
+    width: 240px;
+}
+
+#equals {
+    background: #fff;
+    color: #000;
+    width: 160px;
+    border-radius: 0px 0px 7px 0px;
+    font-size: 20px;
+    &:hover {
+        outline: 0.05em solid #CFC81C;
+        background: #CFC81C;
+        z-index: 3;
+    }
+}
+
+#zero {
+    border-radius: 0px 0px 0px 7px;
+}

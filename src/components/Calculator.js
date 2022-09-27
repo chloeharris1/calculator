@@ -1,5 +1,8 @@
 import React from "react";
+// Components
+import Formula from "./Formula";
 import Output from "./Output";
+import Buttons from "./Buttons";
 
 class Calculator extends React.Component {
     constructor(props){
@@ -9,9 +12,9 @@ class Calculator extends React.Component {
     render(){
         return (
             <div className="calculator">
-                {/* <Formula />
+                <Formula />
                 <Output />
-                <Buttons /> */}
+                <Buttons />
             </div>
         );
     }
