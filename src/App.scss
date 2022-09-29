@@ -82,7 +82,7 @@ button {
 }
 
 #clear {
-    width: 240px;
+    width: 160px;
 }
 
 #equals {
@@ -100,4 +100,9 @@ button {
 
 #zero {
     border-radius: 0px 0px 0px 7px;
+}
+
+i:hover {
+    transform: translateX(-30%);
+    transition: ease-out 0.1s;
 }

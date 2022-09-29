@@ -35,7 +35,14 @@ class Buttons extends React.Component {
                 <button id={button.id} value={button.value}>{button.value}</button>
             );
         });
-        return <div>{calcPad}</div>
+        return (
+        <div>
+            <button id="delete" value='del'>
+            <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            {calcPad}
+        </div>
+            )
     }
 }
 
