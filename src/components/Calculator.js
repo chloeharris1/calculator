@@ -7,14 +7,25 @@ import Buttons from "./Buttons";
 class Calculator extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            currentVal: '0'
+        }
+        this.handleClick = this.handleClick.bind(this);
+    };
+
+    handleClick(e) {
+        this.setState = {
+            currentVal: e.target.value
+        }
     }
 
     render(){
         return (
             <div className="calculator">
                 <Formula />
-                <Output />
-                <Buttons />
+                <Output 
+                currentValue={this.state.currentVal}/>
+                <Buttons/>
             </div>
         );
     }

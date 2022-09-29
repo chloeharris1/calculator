@@ -1,31 +1,41 @@
 import React from "react";
 
+
+const buttons = [
+    { id: 'clear', value: 'C'},
+    { id: 'divide', value: '/'},
+    { id: 'seven', value: '7'},
+    { id: 'eight', value: '8'},
+    { id: 'nine', value: '9'},
+    { id: 'multiply', value: '*'},
+    { id: 'four', value: '4'},
+    { id: 'five', value: '5'},
+    { id: 'six', value: '6'},
+    { id: 'minus', value: '-'},
+    { id: 'one', value: '1'},
+    { id: 'two', value: '2'},
+    { id: 'three', value: '3'},
+    { id: 'plus', value: '+'},
+    { id: 'zero', value: '0'},
+    { id: 'decimal', value: '.'},
+    { id: 'equals', value: '='}
+];
+
+
+
+
+
 class Buttons extends React.Component {
     constructor(props){
         super(props);
     }
     render(){
-        return (
-            <div>
-                <button id="clear">C</button>
-                <button id="divide">/</button>
-                <button id="seven">7</button>
-                <button id="eight">8</button>
-                <button id="nine">9</button>
-                <button id="multiply">*</button>
-                <button id="four">4</button>
-                <button id="five">5</button>
-                <button id="six">6</button>
-                <button id="subtract">-</button>
-                <button id="one">1</button>
-                <button id="two">2</button>
-                <button id="three">3</button>
-                <button id="add">+</button>
-                <button id="zero">0</button>
-                <button id="decimal">.</button>
-                <button id="equals">=</button>
-            </div>
-        );
+        let calcPad = buttons.map(button => {
+            return (
+                <button id={button.id} value={button.value}>{button.value}</button>
+            );
+        });
+        return <div>{calcPad}</div>
     }
 }
 

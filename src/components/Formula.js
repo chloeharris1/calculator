@@ -4,7 +4,7 @@ class Formula extends React.Component {
 
     render(){
         return (
-            <div className="formulaDisplay">1 + 1</div>
+            <div className="formulaDisplay"></div>
         );
     }
 }

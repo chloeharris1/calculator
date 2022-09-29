@@ -43,15 +43,16 @@ body {
 }
 
 .outputDisplay {
-    font-size: 29px;
+    font-size: 32px;
     font-family: $main-font;
+    min-height: 55px;
     line-height: 40px;
     text-align: right;
     vertical-align: text-top;
 }
 
 .formulaDisplay {
-    min-height: 40px;
+    min-height: 50px;
     font-size: 20px;
     text-align: right;
     vertical-align: text-top;
@@ -59,7 +60,7 @@ body {
     overflow-wrap: break-word;
     word-wrap: break-word;
     font-family: $main-font;
-    color: #CFC81C;
+    color: #ccff33;
     font-style: italic;
 }
 
@@ -74,7 +75,7 @@ button {
     font-family: $main-font;
     font-size: 18px;
     &:hover {
-        color: #CFC81C;
+        color: #ccff33;
         outline: 0.05em solid grey;
         z-index: 3;
     }
@@ -89,10 +90,10 @@ button {
     color: #000;
     width: 160px;
     border-radius: 0px 0px 7px 0px;
-    font-size: 20px;
+    font-size: 22px;
     &:hover {
-        outline: 0.05em solid #CFC81C;
-        background: #CFC81C;
+        outline: 0.05em solid #ccff33;
+        background: #ccff33;
         z-index: 3;
     }
 }
