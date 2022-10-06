@@ -43,20 +43,20 @@ body {
 }
 
 .outputDisplay {
-    font-size: 32px;
+    font-size: 40px;
     font-family: $main-font;
     min-height: 55px;
-    line-height: 40px;
+    line-height: 50px;
     text-align: right;
     vertical-align: text-top;
 }
 
-.equationDisplay {
+.expressionDisplay {
     min-height: 50px;
     font-size: 20px;
     text-align: right;
     vertical-align: text-top;
-    line-height: 30px;
+    line-height: 50px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     font-family: $main-font;
@@ -82,7 +82,7 @@ button {
 }
 
 #clear {
-    width: 160px;
+    width: 240px;
 }
 
 #equals {

@@ -26,20 +26,18 @@ const buttons = [
 
 
 class Buttons extends React.Component {
-    constructor(props){
-        super(props);
-    }
     render(){
         let calcPad = buttons.map(button => {
             return (
-                <button id={button.id} value={button.value}>{button.value}</button>
+                <button 
+                id={button.id} 
+                value={button.value} 
+                key={button.value}
+                onClick={this.props.clear}>{button.value}</button>
             );
         });
         return (
         <div>
-            <button id="delete" value='del'>
-            <i class="fa-solid fa-arrow-left"></i>
-            </button>
             {calcPad}
         </div>
             )
