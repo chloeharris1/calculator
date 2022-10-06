@@ -1,7 +1,7 @@
 import React from "react";
 // Components
 import Expression from "./Expression";
-import Output from "./Output";
+import Display from "./Display";
 import Buttons from "./Buttons";
 
 class Calculator extends React.Component {
@@ -35,8 +35,11 @@ class Calculator extends React.Component {
     }
 
     handleNumbers(e){
-        const value = e.target.value; 
-
+    const value = e.target.value; 
+    console.log(value)
+    this.setState({
+        currentVal: value
+    })
 
     }
 
@@ -50,7 +53,7 @@ class Calculator extends React.Component {
 
     handleClear() {
         this.setState({
-            currentVal: 0, 
+            currentVal: '0', 
             equation: ''
         });
     }
@@ -60,9 +63,11 @@ class Calculator extends React.Component {
             <div className="calculator">
                 <Expression
                 expression={this.state.expression}/>
-                <Output 
+                <Display 
                 currentValue={this.state.currentVal}/>
-                <Buttons clear={this.handleClear}/>
+                <Buttons 
+                handleNumbers={this.handleNumbers}
+                clear={this.handleClear}/>
             </div>
         );
     }
