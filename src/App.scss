@@ -43,25 +43,30 @@ body {
 }
 
 .outputDisplay {
-    font-size: 40px;
     font-family: $main-font;
-    min-height: 55px;
-    line-height: 50px;
+    height: 150px;
+    line-height: 75px;
+    width: 100%;
     text-align: right;
-    vertical-align: text-top;
+    vertical-align: text-bottom;
+    overflow: hidden;
 }
 
 .expressionDisplay {
-    min-height: 50px;
-    font-size: 20px;
-    text-align: right;
-    vertical-align: text-top;
-    line-height: 50px;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    font-size: 2em;
     font-family: $main-font;
     color: #ccff33;
     font-style: italic;
+    overflow: hidden;
+}
+
+.calc-error {
+    font-size: 1.5em;
+    color: red;
+}
+
+.calc-result {
+    font-size: 3.5em;
 }
 
 button {
@@ -102,7 +107,7 @@ button {
     border-radius: 0px 0px 0px 7px;
 }
 
-i:hover {
-    transform: translateX(-30%);
-    transition: ease-out 0.1s;
-}
+// i:hover {
+//     transform: translateX(-30%);
+//     transition: ease-out 0.1s;
+// }

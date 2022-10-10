@@ -1,6 +1,5 @@
 import React from "react";
 // Components
-// import Expression from "./Expression";
 import Display from "./Display";
 import Buttons from "./Buttons";
 
@@ -32,6 +31,8 @@ class Calculator extends React.Component {
     calculateInput(state, value){
         const operators = ['+', "/", "-", "*"];
         const hasOperator = (arr, operator) => arr.indexOf(operator) !== -1; 
+
+        let INVALID = 'Invalid Expression';
 
         let expArr = state.expression.split("");
         let prevInput = expArr[expArr.length-1];
@@ -85,23 +86,45 @@ class Calculator extends React.Component {
                     expression: exp.substring(0, exp.length - 1) + value
                 };
             }
+            return {
+                ...state,
+                expression: state.expression + value,
+                value
+            };
+        }
+
+        // Equal operator is selected
+        if(value === '=' && state.expression.length >= 1) {
+            let result = '';
+            let error = '';
+            try {
+                result = eval(state.expression)
+            } catch (err) {
+                error = INVALID;
+                // setTimeout(() => this.setState({
+                //     value: this.state.value
+                // }), 1000);
+            }
+            return {
+                ...state,
+                result,
+                error,
+            };
+
         }
         return {
             ...state,
-            expression: state.expression + value,
             value
         };
 
 
-
-       
     }
 
     render(){
         return (
             <div className="calculator">
                 <Display 
-                currentValue={this.state.value}
+                // currentValue={this.state.value}
                 expression={this.state.expression}
                 result={this.state.result}
                 error={this.state.error}
