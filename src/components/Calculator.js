@@ -1,6 +1,6 @@
 import React from "react";
 // Components
-import Expression from "./Expression";
+// import Expression from "./Expression";
 import Display from "./Display";
 import Buttons from "./Buttons";
 
@@ -12,7 +12,7 @@ class Calculator extends React.Component {
         super(props);
         this.state = {
             value: 0,
-            expresion: '',
+            expression: '',
             result: '',
             error: ''
         }
@@ -20,26 +20,45 @@ class Calculator extends React.Component {
         this.calculateInput = this.calculateInput.bind(this);
     };
 
+    
     handleClick(value){
         this.setState(() => {
-            return calculateInput(this.state, value);
+            return this.calculateInput(this.state, value);
+            
         });
+        console.log(value)
     }
-
+    
     calculateInput(state, value){
-        let eqArr = state.equation.split('');
-        let prevInput = eqArr[eqArr.length-1];
-        console.log(prevInput);
+        const operators = ['+', "/", "-", "*"];
+        const hasOperator = (arr, operator) => arr.indexOf(operator) !== -1; 
+
+        let expArr = state.expression.split("");
+        let prevInput = expArr[expArr.length-1];
+
+        // The value a number, return the number 
+        if(!isNaN(value)) {
+            console.log(value)
+            return {
+                ...state,
+                expression: state.expression + value, 
+                value
+            };
+        }
+
+
+
        
     }
 
     render(){
         return (
             <div className="calculator">
-                <Expression
-                expression={this.state.expression}/>
+                {/* <Expression
+                expression={this.state.expression}/> */}
                 <Display 
                 currentValue={this.state.value}
+                expression={this.state.expression}
                 result={this.state.result}
                 error={this.state.error}
                 />
