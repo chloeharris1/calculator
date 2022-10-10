@@ -33,7 +33,7 @@ class Buttons extends React.Component {
                 id={button.id} 
                 value={button.value} 
                 key={button.value}
-                onClick={this.props.handleNumbers}>{button.value}</button>
+                onClick={this.props.handleClick}>{button.value}</button>
             );
         });
         return (

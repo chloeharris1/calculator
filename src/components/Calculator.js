@@ -4,58 +4,33 @@ import Expression from "./Expression";
 import Display from "./Display";
 import Buttons from "./Buttons";
 
+
+
+
 class Calculator extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            currentVal: '0',
-            prevVal: '0',
-            expresion: ''
+            value: 0,
+            expresion: '',
+            result: '',
+            error: ''
         }
         this.handleClick = this.handleClick.bind(this);
-        this.handleNumbers = this.handleNumbers.bind(this);
-        this.handleOperators = this.handleOperators.bind(this);
-        this.handleEquals = this.handleEquals.bind(this);
-        this.handleClear = this.handleClear.bind(this);
-
+        this.calculateInput = this.calculateInput.bind(this);
     };
 
-    handleClick(key){
-        switch(true){
-            case /c/.test(key): this.handleClear();
-            break;
-            case /[0-9]/.test(key): this.handleNumbers(key);
-            break;
-            case /[+*/-]/.test(key): this.handleOperators(key);
-            break; 
-            case /=/.test(key): this.handleEquals();
-            break;
-            // Default case?
-        }
-    }
-
-    handleNumbers(e){
-    const value = e.target.value; 
-    console.log(value)
-    this.setState({
-        currentVal: value
-    })
-
-    }
-
-    handleOperators(){
-
-    }
-
-    handleEquals(){
-
-    }
-
-    handleClear() {
-        this.setState({
-            currentVal: '0', 
-            equation: ''
+    handleClick(value){
+        this.setState(() => {
+            return calculateInput(this.state, value);
         });
+    }
+
+    calculateInput(state, value){
+        let eqArr = state.equation.split('');
+        let prevInput = eqArr[eqArr.length-1];
+        console.log(prevInput);
+       
     }
 
     render(){
@@ -64,10 +39,12 @@ class Calculator extends React.Component {
                 <Expression
                 expression={this.state.expression}/>
                 <Display 
-                currentValue={this.state.currentVal}/>
+                currentValue={this.state.value}
+                result={this.state.result}
+                error={this.state.error}
+                />
                 <Buttons 
-                handleNumbers={this.handleNumbers}
-                clear={this.handleClear}/>
+                handleClick={this.handleClick}/>
             </div>
         );
     }
