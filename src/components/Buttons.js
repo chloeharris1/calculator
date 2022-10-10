@@ -26,6 +26,10 @@ const buttons = [
 
 
 class Buttons extends React.Component {
+    constructor(props) {
+        super(props);
+    };
+    
     render(){
         let calcPad = buttons.map(button => {
             return (
@@ -33,7 +37,7 @@ class Buttons extends React.Component {
                 id={button.id} 
                 value={button.value} 
                 key={button.value}
-                onClick={this.props.handleClick}>{button.value}</button>
+                onClick={()=>this.props.handleClick(button.value)}>{button.value}</button>
             );
         });
         return (

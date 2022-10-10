@@ -54,8 +54,6 @@ class Calculator extends React.Component {
     render(){
         return (
             <div className="calculator">
-                {/* <Expression
-                expression={this.state.expression}/> */}
                 <Display 
                 currentValue={this.state.value}
                 expression={this.state.expression}
