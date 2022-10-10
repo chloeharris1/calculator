@@ -54,12 +54,43 @@ class Calculator extends React.Component {
                     ...state
                 };
             }
+            // Add dot operator to the previous input 
             return {
                 ...state,
                 expression: state.expression + '.',
                 value
             };
         }
+
+        // Clear "C" is selected 
+        if(value === 'C') {
+            return {
+                ...state,
+                expression: '',
+                result: '',
+                error: '',
+                value: 0
+            };
+        }
+
+        // Add DEL operator?
+
+
+        // Math operator is selected 
+        if(hasOperator(operators, value) && state.expression.length >= 1) {
+            if(isNaN(prevInput)) {
+                let exp = state.expression;
+                return {
+                    ...state,
+                    expression: exp.substring(0, exp.length - 1) + value
+                };
+            }
+        }
+        return {
+            ...state,
+            expression: state.expression + value,
+            value
+        };
 
 
 
