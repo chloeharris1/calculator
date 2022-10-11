@@ -2,23 +2,24 @@ import React from "react";
 
 
 const buttons = [
+    {id: 'delete', value: 'DEL'},
     { id: 'clear', value: 'C'},
-    { id: 'divide', value: '/'},
     { id: 'seven', value: '7'},
     { id: 'eight', value: '8'},
     { id: 'nine', value: '9'},
-    { id: 'multiply', value: '*'},
+    { id: 'divide', value: '/'},
     { id: 'four', value: '4'},
     { id: 'five', value: '5'},
     { id: 'six', value: '6'},
-    { id: 'minus', value: '-'},
+    { id: 'multiply', value: '*'},
     { id: 'one', value: '1'},
     { id: 'two', value: '2'},
     { id: 'three', value: '3'},
-    { id: 'plus', value: '+'},
+    { id: 'subtract', value: '-'},
     { id: 'zero', value: '0'},
     { id: 'decimal', value: '.'},
-    { id: 'equals', value: '='}
+    { id: 'equals', value: '='},
+    { id: 'add', value: '+'}
 ];
 
 

@@ -74,7 +74,14 @@ class Calculator extends React.Component {
             };
         }
 
-        // Add DEL operator?
+        // DEL operator is selected
+        if(value === 'DEL' && state.expression.length >= 1) {
+            return {
+                ...state,
+                expression: state.expression.slice(0,-1),
+                value
+            };
+        }
 
 
         // Math operator is selected 
@@ -124,7 +131,7 @@ class Calculator extends React.Component {
         return (
             <div className="calculator">
                 <Display 
-                // currentValue={this.state.value}
+                value={this.state.value}
                 expression={this.state.expression}
                 result={this.state.result}
                 error={this.state.error}
