@@ -4,8 +4,6 @@ import Display from "./Display";
 import Buttons from "./Buttons";
 
 
-
-
 class Calculator extends React.Component {
     constructor(props){
         super(props);
@@ -19,18 +17,18 @@ class Calculator extends React.Component {
         this.calculateInput = this.calculateInput.bind(this);
     };
 
-    
     handleClick(value){
         this.setState(() => {
             return this.calculateInput(this.state, value);
             
         });
-        console.log(value)
+        // console.log(value)
     }
     
     calculateInput(state, value){
         const operators = ['+', "/", "-", "*"];
         const hasOperator = (arr, operator) => arr.indexOf(operator) !== -1; 
+        console.log(hasOperator)
 
         let INVALID = 'Invalid Expression';
 
@@ -39,7 +37,7 @@ class Calculator extends React.Component {
 
         // The value a number, return the number 
         if(!isNaN(value)) {
-            console.log(value)
+            // console.log(value)
             return {
                 ...state,
                 expression: state.expression + value, 
@@ -63,6 +61,13 @@ class Calculator extends React.Component {
             };
         }
 
+        // Dot operator is selected first 
+        if(state.expression.length < 1 && value === '.') {
+            return {
+                expression: 0 + value
+            };
+        }
+
         // Clear "C" is selected 
         if(value === 'C') {
             return {
@@ -70,9 +75,10 @@ class Calculator extends React.Component {
                 expression: '',
                 result: '',
                 error: '',
-                value: 0
+                value
             };
         }
+        console.log(value);
 
         // DEL operator is selected
         if(value === 'DEL' && state.expression.length >= 1) {
@@ -82,7 +88,6 @@ class Calculator extends React.Component {
                 value
             };
         }
-
 
         // Math operator is selected 
         if(hasOperator(operators, value) && state.expression.length >= 1) {
@@ -117,14 +122,11 @@ class Calculator extends React.Component {
                 result,
                 error,
             };
-
         }
         return {
             ...state,
             value
         };
-
-
     }
 
     render(){

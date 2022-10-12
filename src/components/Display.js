@@ -1,8 +1,8 @@
 import React from "react";
 
 import Expression from "./Expression";
+import Output from "./Output";
 
-const INVALID = 'Invalid Expression';
 
 class Display extends React.Component {
     render() {
@@ -10,10 +10,10 @@ class Display extends React.Component {
             <div id="display" className="calcDisplay">
                 <Expression 
                 expression={this.props.expression}/>
-                {this.props.error === INVALID ? 
-                <div className="calc-error">{this.props.error}</div> :
-                <div className="calc-result">{this.props.result}</div>
-            }
+                <Output 
+                value={this.props.value}
+                result={this.props.result}
+                error={this.props.error}/>
             </div>
         );
     }
