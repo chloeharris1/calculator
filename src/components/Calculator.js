@@ -35,6 +35,12 @@ class Calculator extends React.Component {
         let expArr = state.expression.split("");
         let prevInput = expArr[expArr.length-1];
 
+        // Do not allow a number to begin with multiple zeros
+        if(state.expression.length <= 0 && value === '0') {
+            return {
+                ...state
+            };
+        }
         // The value a number, return the number 
         if(!isNaN(value)) {
             // console.log(value)
@@ -67,6 +73,7 @@ class Calculator extends React.Component {
                 expression: 0 + value
             };
         }
+
 
         // Clear "C" is selected 
         if(value === 'C') {
@@ -133,6 +140,7 @@ class Calculator extends React.Component {
         return (
             <div className="calculator">
                 <Display 
+                initialize={this.initialize}
                 value={this.state.value}
                 expression={this.state.expression}
                 result={this.state.result}
