@@ -142,7 +142,7 @@ class Calculator extends React.Component {
                 <Display 
                 value={this.state.value}
                 expression={this.state.expression}
-                result={this.state.result}
+                result={this.state.result || '0'}
                 error={this.state.error}
                 />
                 <Buttons 
