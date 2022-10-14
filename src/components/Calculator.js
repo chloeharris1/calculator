@@ -51,6 +51,14 @@ class Calculator extends React.Component {
             };
         }
 
+        // Handle negative numbers
+        if(isNaN(value) && value === '-') {
+            return {
+                ...state,
+                expression: state.expression + value
+            };
+        }
+
         // Dot operator is selected
         if(state.expression.length >= 1 && value === '.') {
             // If the last operator selected is the dot operator, do nothing
