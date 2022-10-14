@@ -9,11 +9,11 @@ monospace;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: $main-font;
 }
 
 body {
     background: #F7F6EE;
-    cursor: default;
 }
 
 .calculator {
@@ -28,6 +28,7 @@ body {
     background-clip: padding-box;
     border: solid $border transparent;
     border-radius: 1em;
+    cursor: pointer;
     &:before {
         content: '';
         position: absolute;
@@ -43,17 +44,14 @@ body {
 }
 
 .calcDisplay {
-    font-family: $main-font;
-    font-weight: 100;
     height: 150px;
     line-height: 75px;
-    width: 100%;
     text-align: right;
     vertical-align: text-top;
     overflow: hidden;
     .expressionDisplay {
         font-size: 1.7em;
-        font-family: $main-font;
+        height: 75px;
         color: #ccff33;
         font-style: italic;
         overflow: hidden;
@@ -99,19 +97,15 @@ button {
     &:hover {
         outline: 0.05em solid #ccff33;
         background: #ccff33;
-        z-index: 3;
     }
 }
 
+// Round bottom right corner
 #add {
     border-radius: 0px 0px 7px 0px;
 }
 
+// Round bottom left corner
 #zero {
     border-radius: 0px 0px 0px 7px;
 }
-
-// i:hover {
-//     transform: translateX(-30%);
-//     transition: ease-out 0.1s;
-// }

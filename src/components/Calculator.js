@@ -8,7 +8,7 @@ class Calculator extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            value: 0,
+            value: '0',
             expression: '',
             result: '',
             error: ''
@@ -140,7 +140,6 @@ class Calculator extends React.Component {
         return (
             <div className="calculator">
                 <Display 
-                initialize={this.initialize}
                 value={this.state.value}
                 expression={this.state.expression}
                 result={this.state.result}

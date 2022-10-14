@@ -11,7 +11,7 @@ class Display extends React.Component {
                 <Expression 
                 expression={this.props.expression}/>
                 <Output 
-                value={this.props.value}
+                value={this.props.value || '0'}
                 result={this.props.result}
                 error={this.props.error}/>
             </div>
