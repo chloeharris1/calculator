@@ -11,6 +11,7 @@ A FreeCodeCamp Front End Development Libraries project, with the objective to fu
 
 ## Snapshot 
 
+
 ## Link
 [JavaScript Calculator]()
 
@@ -48,6 +49,12 @@ User Story #14: Pressing an operator immediately following = should start a new 
 User Story #15: My calculator should have several decimal places of precision when it comes to rounding (note that there is no exact standard, but you should be able to handle calculations like 2 / 7 with reasonable precision to at least 4 decimal places).
 ~~~~
 
+## Testing
+User Story #13 doesn't pass FCC test - passes manual testing:
+
+"...For example, if 5 + * 7 = is entered, the result should be 35 (i.e. 5 * 7); **if 5 * - 5 = is entered, the result should be -25 (i.e. 5 * (-5)).**"
+
+![screenshot](./public/userStory13manualTest.png)
 
 ## Credits
 
