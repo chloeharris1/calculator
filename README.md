@@ -56,6 +56,9 @@ User Story #13 doesn't pass FCC test - passes manual testing:
 
 ![screenshot](./public/userStory13manualTest.png)
 
+## Call Out:
+I used the eval() method to perform calculations, with the understanding that in larger applications this should not be used since the method is a security risk. 
+
 ## Credits
 
 Favicon:

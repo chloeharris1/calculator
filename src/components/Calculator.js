@@ -28,12 +28,15 @@ class Calculator extends React.Component {
     calculateInput(state, value){
         const operators = ['+', "/", "-", "*"];
         const hasOperator = (arr, operator) => arr.indexOf(operator) !== -1; 
-        console.log(hasOperator)
+        // console.log(hasOperator)
 
         let INVALID = 'Invalid Expression';
 
         let expArr = state.expression.split("");
+        // console.log(expArr);
         let prevInput = expArr[expArr.length-1];
+        // console.log(prevInput);
+
 
         // Do not allow a number to begin with multiple zeros
         if(state.expression.length <= 0 && value === '0') {
@@ -82,7 +85,12 @@ class Calculator extends React.Component {
             };
         }
 
+        // Prevent multiple dot operators in expression 
+        // if(value === '.' && prevInput.includes('.')) {
+        //     return;
+        // }
 
+       
         // Clear "C" is selected 
         if(value === 'C') {
             return {
@@ -93,7 +101,7 @@ class Calculator extends React.Component {
                 value
             };
         }
-        console.log(value);
+        // console.log(value);
 
         // DEL operator is selected
         if(value === 'DEL' && state.expression.length >= 1) {
@@ -128,9 +136,6 @@ class Calculator extends React.Component {
                 result = eval(state.expression)
             } catch (err) {
                 error = INVALID;
-                // setTimeout(() => this.setState({
-                //     value: this.state.value
-                // }), 1000);
             }
             return {
                 ...state,
