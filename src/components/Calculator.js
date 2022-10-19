@@ -66,17 +66,18 @@ class Calculator extends React.Component {
         if(state.expression.length >= 1 && value === '.') {
             // If the last operator selected is the dot operator, do nothing
             if(prevInput === '.') {
-                return {
+                return{
                     ...state
                 };
             }
             // Add dot operator to the previous input 
             return {
                 ...state,
-                expression: state.expression + '.',
+                expression: state.expression + value,
                 value
             };
         }
+        console.log(state)
 
         // Dot operator is selected first 
         if(state.expression.length < 1 && value === '.') {

@@ -10,7 +10,7 @@ A FreeCodeCamp Front End Development Libraries project, with the objective to fu
 ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 ## Snapshot 
-
+![image](./public/calculatorapp.png)
 
 ## Link
 [JavaScript Calculator]()
@@ -57,7 +57,7 @@ User Story #13 doesn't pass FCC test - passes manual testing:
 ![screenshot](./public/userStory13manualTest.png)
 
 ## Call Out:
-I used the eval() method to perform calculations, with the understanding that in larger applications this should not be used since the method is a security risk. 
+I used the eval() method to perform calculations, with the understanding that in larger applications this should not be used since this method is a security risk. 
 
 ## Credits
 
